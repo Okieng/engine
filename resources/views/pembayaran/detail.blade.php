@@ -47,7 +47,7 @@ Licensed under MIT
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
-            {{ Auth::user()->nama }}
+            $jabatan
           </div>
         </div>
         <!-- END SIDEBAR USER TITLE -->
@@ -72,8 +72,30 @@ Licensed under MIT
     </div>
   <div class="col-md-9">
     <h3>Detail info siswa</h3>
-    <p>Nama :  {{ Auth::user()->nama }}</p>
-    <p>Kelas :  {{ Auth::user()->kelas }}</p>
+    <label>Nama :</label><br>
+    <label>Kelas :</label><br>
+    <label>Tipe Pembayaran</label><br>
+    <label>SPP : </label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Januari</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Februari</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Maret</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">April</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Mei</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Juni</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Juli</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Agustus</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">September</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Oktober</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">November</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Desember</label><br><br>
+    <label>Uang Bangunan : </label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Lunas</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Belum Lunas</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Afirmasi</label><br><br>
+    <label>Uang Praktek : </label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Lunas</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Belum Lunas</label>
+    <label class="checkbox-inline"><input type="checkbox" value="">Afirmasi</label>
 </div>
 </div>
 </div>
