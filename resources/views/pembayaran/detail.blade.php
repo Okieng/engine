@@ -47,7 +47,7 @@ Licensed under MIT
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
-            $jabatan
+            {{ Auth::user()->nama }}
           </div>
         </div>
         <!-- END SIDEBAR USER TITLE -->
@@ -72,8 +72,8 @@ Licensed under MIT
     </div>
   <div class="col-md-9">
     <h3>Detail info siswa</h3>
-    <p>Nama :</p>
-    <p>Kelas</p>
+    <p>Nama :  {{ Auth::user()->nama }}</p>
+    <p>Kelas :  {{ Auth::user()->kelas }}</p>
 </div>
 </div>
 </div>

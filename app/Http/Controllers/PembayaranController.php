@@ -70,8 +70,13 @@ class PembayaranController extends Controller
      */
     public function show($id)
     {
+        $user = User::all();
         $pembayaran = Pembayaran::find($id);
-        return view('pembayaran.detail',compact('pembayaran'));
+                if(!$pembayaran){
+            abort(503);
+        }
+        
+        return view('pembayaran.detail',compact(['pembayaran'],['user']));
     }
 
     /**

@@ -28,6 +28,14 @@
 <!--===============================================================================================-->
 </head>
 <body>
+        
+    @if (count($errors)>0)
+	<ul>
+		@foreach ($errors->all() as $error)
+			<li>{{$error}}</li>
+		@endforeach
+	</ul>
+@endif
 
 	<div class="limiter">
 		<div class="container-login100">
@@ -41,26 +49,30 @@
 						Log in
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="nis" placeholder="NIS">
+					<div class="wrap-input100 validate-input form-group{{ $errors->has('nis') ? ' has-error' : '' }}" data-validate="NIS is required" data-validate = "Enter NIS" >
+						<input class="input100" id="nis" type="text" name="nis" placeholder="NIS" value="{{ old('nis') }}" required autofocus>
+                         @if ($errors->has('nis'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nis') }}</strong>
+                                    </span>
+                                @endif
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="password" placeholder="Password">
+					<div class="wrap-input100 validate-input form-group{{ $errors->has('password') ? ' has-error' : '' }}" data-validate="Enter password">
+						<input class="input100" id="password" type="password" name="password" placeholder="Password" value="{{ old('password') }}" required autofocus>
+                          @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type="submit">
 							Login
 						</button>
-					</div>
-
-					<div class="text-center p-t-90">
-						<a class="txt1" href="{{ route('password.request') }}">
-							Lupa Password?
-						</a>
 					</div>
 				</form>
 			</div>

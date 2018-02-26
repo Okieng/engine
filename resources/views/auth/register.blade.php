@@ -28,11 +28,19 @@
 <!--===============================================================================================-->
 </head>
 <body>
+    
+    @if (count($errors)>0)
+	<ul>
+		@foreach ($errors->all() as $error)
+			<li>{{$error}}</li>
+		@endforeach
+	</ul>
+@endif
 
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
                     <span class="login100-form-logo">
                         <i class="zmdi zmdi-landscape"></i>
                     </span>
@@ -90,7 +98,7 @@
                             </div>
                         </div>
                         <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
+                        <button class="login100-form-btn" type="submit">
                             Register
                         </button>
                     </div>
@@ -98,7 +106,7 @@
                             <label for="jabatan" style="visibility: hidden;" class="col-md-4 control-label hidden">Jabatan</label>
 
                             <div class="col-md-6 hidden">
-                               <select style="visibility: hidden;" " name="akses" class="form-control ">
+                               <select style="visibility: hidden;" name="akses" class="form-control">
                             <option value="siswa">SISWA</option>
                             <option value="admin">ADMIN</option>
                             </select>
